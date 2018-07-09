@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/product.js"></script>
+    <script src="js/Dropdown.js"></script>
+    <script>
+      window.onload = function () {
+        window.banner = new Banner();
+        window.product = new Product();
+        window.dropdown = new Dropdown();
+        $(document).on('scroll', function () {
+          if(window.scrollY > 200) {
+            $('.fixed-item.turnTop').attr('hidden', null);
+          }
+          else {
+            $('.fixed-item.turnTop').attr('hidden', 'hidden');
+          }
+        })
+        $('.fixed-item.turnTop').on('click', function(){
+          window.scrollTo(0,0);
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 大容器 -->
+    <div class="container">
+      <!-- LoGo、 登录注册 与 选择站点 -->
+      <div class="header">
+        <!-- logo -->
+        <div class="header-logo">
+          <a href="#">LoGo</a>
+        </div>
+        <!-- 选择站点（下拉菜单） -->
+        <div class="header-choice">
+          <!-- 触发器 -->
+          <div class="header-toggle">选择站点</div>
+          <!-- 下拉列表 -->
+          <ul class="header-list">
+            <li><a href="#" data-v="美国">美国</a></li>
+            <li><a href="#" data-v="英国">英国</a></li>
+          </ul>
+        </div>
+        <!-- 登录注册 -->
+        <ul class="header-btns">
+          <li><a href="#">
+            <span class="iconfont iconfont-login"></span>
+            <span class="text">登录</span>
+          </a></li>
+          <li><a href="#">
+            <span class="iconfont iconfont-regist"></span>
+            <span class="text">注册</span>
+          </a></li>
+        </ul>
+      </div>
+      <!-- 导航条 -->
+      <div class="navbar">
+        <ul class="navbar-list">
+          <li><a href="#">首页</a></li>
+          <li><a href="#">产品</a></li>
+          <li><a href="#">帮助</a></li>
+          <li><a href="#">关于我们</a></li>
+        </ul>
+      </div>
+
+      <!-- banner(轮播图) -->
+      <div class="banner">
+        <!-- 轮播图片的装载容器 -->
+        <div class="banner-container">
+          <img src="img/adv.png">
+          <img src="img/adv.png">
+          <img src="img/adv.png">
+          <img src="img/adv.png">
+          <img src="img/adv.png">
+        </div>
+        <!-- 控制按钮(上一张与下一张,[]：占位符) -->
+        <div class="banner-last"><span class="iconfont iconfont-last"></span></div>
+        <div class="banner-next"><span class="iconfont iconfont-next"></span></div>
+        <!-- 点阵控制列 -->
+        <ul class="banner-list">
+          <li class="active" data-n="0"></li>
+          <li data-n="1"></li>
+          <li data-n="2"></li>
+          <li data-n="3"></li>
+          <li data-n="4"></li>
+        </ul>
+      </div>
+      <!-- 这个容器可以插入原生html代码 -->
+      <!-- 用于介绍用户购买流程的图文 -->
+      <div class="artical">
+        <p class="notes">这个容器可以通过插入原生的html代码</p>
+        <p class="notes">编写用于介绍用户购买流程的图文</p>
+        <p class="notes">容器高度响应插入的文本高度</p>
+      </div>
+      <!-- 产品展示 -->
+      <div class="product">
+        <!-- 头部：标题与搜索框 -->
+        <div class="product-header">
+          <div class="product-header-title">产品展示</div>
+          <!-- 产品分类列表 -->
+          <ul class="product-list">
+            <li class="active" data-t="free"><a href="javascript:;" data-n="free">免费产品</a></li>
+            <li data-t="disc"><a href="javascript:;" data-n="disc">折扣产品</a></li>
+          </ul>
+          <!-- 搜索框 -->
+          <div class="product-search-group">
+            <input type="text" class="product-search-input" placeholder="请输入关键词">
+            <a class="product-search-btn" href="javascript:;"><span class="iconfont iconfont-search"></span></a>
+          </div>
+        </div>
+        <!-- 免费板块 -->
+        <div class="product-panel open" data-t="free">
+          <div class="product-row">
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">0.00</span>
+                <span class="desc">免费</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">0.00</span>
+                <span class="desc">免费</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">0.00</span>
+                <span class="desc">免费</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">0.00</span>
+                <span class="desc">免费</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+          </div>
+          <div class="product-row">
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">0.00</span>
+                <span class="desc">免费</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">0.00</span>
+                <span class="desc">免费</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">0.00</span>
+                <span class="desc">免费</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">0.00</span>
+                <span class="desc">免费</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!-- 折扣板块 -->
+        <div class="product-panel" data-t="disc">
+          <div class="product-row">
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">70.00</span>
+                <span class="s-price">160.00</span>
+                <span class="desc">折扣</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">70.00</span>
+                <span class="s-price">160.00</span>
+                <span class="desc">折扣</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">70.00</span>
+                <span class="s-price">160.00</span>
+                <span class="desc">折扣</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">70.00</span>
+                <span class="s-price">160.00</span>
+                <span class="desc">折扣</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+          </div>
+          <div class="product-row">
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">70.00</span>
+                <span class="s-price">160.00</span>
+                <span class="desc">折扣</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">70.00</span>
+                <span class="s-price">160.00</span>
+                <span class="desc">折扣</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">70.00</span>
+                <span class="s-price">160.00</span>
+                <span class="desc">折扣</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+            <div class="product-item">
+              <img src="img/pro.jpg" class="product-img">
+              <div class="product-price">
+                <span class="price">70.00</span>
+                <span class="s-price">160.00</span>
+                <span class="desc">折扣</span>
+              </div>
+              <div class="product-desc">中袖半袖柔美雪纺衫女2018新款大码女装夏装</div>
+              <div class="product-count">72</div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+
+      <!-- 底部的备案信息 -->
+      <div class="footer">
+        <p>Powered by PHPWEB 2.1.2 ©2008-2016 WWW.XXXXX.COM</p>
+        <p>地址：这里是您的公司地址 电话：+86-0000-12345 传真：+86-0000-12345</p>
+        <p>ICP备案编号：ICP备********号</p>
+      </div>
+    </div>
+    <!-- 固定容器联系客服与回到顶部 -->
+    <div class="fixed-content">
+      <div class="fixed-item customer">
+        <span class="iconfont iconfont-customer"></span>
+      </div>
+      <div class="fixed-item turnTop" hidden>
+        <span class="iconfont iconfont-up"></span>
+      </div>
+    </div>
+  </body>
+</html>
